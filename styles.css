@@ -1,0 +1,184 @@
+:root {
+  --c-black: #001219;
+  --c-white: #F8F9FA;
+  --c-grey: #a8a6b2;
+  --c-lightgrey: #e8e6f0;
+  --c-darkblue: #005F73;
+  --c-blue: #0A9396;
+  --c-lightblue: #94D2BD;
+  --c-darkgreen: #9CE73C;
+  --c-green: #90BE6D;
+  --c-lightyellow: #E9D8A6;
+  --c-yellow: #EE9B00;
+  --c-darkyellow: #CA6702;
+  --c-red: #AE2012;
+  --c-burgundy: #9c4e56;
+  --c-brown: #9B2226;
+  --c-lightbrown: #a78737;
+  --c-purple: #B5179E;
+  --c-lightpurple: #d2c3fb;
+  --c-pink: #ff73bf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--c-black);
+  color: var(--c-white);
+}
+
+main {
+  background-color: var(--c-darkblue);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-container >  * {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 0;
+}
+
+.input:focus {
+  outline: 3px solid var(--c-yellow);
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--c-black);
+  color: var(--c-white);
+  transition: background-color 250ms ease;
+}
+
+.btn:hover {
+  background-color: var(--c-blue);
+  color: var(--c-white);
+}
+
+.creature-container {
+  display: none;
+}
+
+.creature-top {
+  margin-block: 2rem;
+  padding-inline: 0.5rem;
+}
+
+.creature-top > * {
+  margin-bottom: 0.5rem;
+}
+
+.creature-type {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.creature-special-name {
+  margin-top: 1rem;
+}
+
+.creature-stats {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0.5rem;
+}
+
+.creature-stats tr {
+  background-color: var(--c-blue);
+}
+
+.creature-stats th,
+.creature-stats td {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Color classes for types */
+.flying {
+  background-color: var(--c-darkblue);
+}
+
+.water {
+  background-color: var(--c-blue);
+}
+
+.ice {
+  background-color: var(--c-lightblue);
+}
+
+.grass {
+  background-color: var(--c-green);
+}
+
+.electric {
+  background-color: var(--c-yellow);
+}
+
+.ground {
+  background-color: var(--c-darkyellow);
+}
+
+.fire {
+  background-color: var(--c-red);
+}
+
+.rock {
+  background-color: var(--c-brown);
+}
+
+.dragon {
+  background-color: var(--c-purple);
+}
+
+.poison {
+  background-color: var(--c-darkgreen);
+}
+
+.fairy {
+  background-color: var(--c-pink);
+}
+
+.bug {
+  background-color: var(--c-lightbrown);
+}
+
+.dark {
+  background-color: var(--c-burgundy);
+}
+
+.ghost {
+  background-color: var(--c-lightgrey);
+}
+
+.psychic {
+  background-color: var(--c-lightpurple);
+}
+
+.steel {
+  background-color: var(--c-grey);
+}
