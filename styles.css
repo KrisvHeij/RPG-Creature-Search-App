@@ -91,13 +91,20 @@ main {
 }
 
 .help-content {
-  display: block;
+  display: none;
   position: absolute;
-  top: -200px;
+  top: -150px;
   right: -450px;
-  border: 2px solid red;
+  background-color: var(--c-darkblue);
+  border: 2px solid var(--c-yellow);
+  border-radius: 5px;
   width: 400px;
   height: 400px;
+  padding: 1rem;
+}
+
+.help-content.open {
+  display: block;
 }
 
 .creature-container {
@@ -204,3 +211,8 @@ main {
 .steel {
   background-color: var(--c-grey);
 }
+
+/* Toggle class for helpcontainer */
+/* .open {
+  display: block;
+} */
