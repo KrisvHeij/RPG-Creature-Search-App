@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=question_mark"
+    />
     <title>RPG Creature Search App</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -19,7 +23,11 @@
       <div class="search-container">
         <label for="search-input">Search for Creature Name or ID:</label>
         <input id="search-input" class="input" required />
-        <button id="search-button" class="btn">Search</button>
+        <div class="btn-container">
+          <button id="search-button" class="btn">Search</button>
+          <button class="btn btn-help">?</button>
+          <div id="help-container" class="help-content"></div>
+        </div>
       </div>
       <div class="creature-container">
         <div class="creature-top">

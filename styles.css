@@ -63,7 +63,12 @@ main {
   outline: 3px solid var(--c-yellow);
 }
 
+.btn-container {
+  position: relative;
+}
+
 .btn {
+  display: inline-block;
   padding: 0.5rem 2rem;
   border-radius: 5px;
   border: 0;
@@ -76,6 +81,23 @@ main {
 .btn:hover {
   background-color: var(--c-blue);
   color: var(--c-white);
+}
+
+.btn-help {
+  position: absolute;
+  right: 0;
+  padding-inline: 1rem;
+  background-color: var(--c-yellow);
+}
+
+.help-content {
+  display: block;
+  position: absolute;
+  top: -200px;
+  right: -450px;
+  border: 2px solid red;
+  width: 400px;
+  height: 400px;
 }
 
 .creature-container {
