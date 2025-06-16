@@ -94,17 +94,19 @@ main {
   display: none;
   position: absolute;
   top: -150px;
-  right: -450px;
+  right: -325px;
   background-color: var(--c-darkblue);
   border: 2px solid var(--c-yellow);
   border-radius: 5px;
-  width: 400px;
-  height: 400px;
   padding: 1rem;
 }
 
 .help-content.open {
   display: block;
+}
+
+.help-content p {
+  margin-top: 0.5rem;
 }
 
 .creature-container {
@@ -212,7 +214,3 @@ main {
   background-color: var(--c-grey);
 }
 
-/* Toggle class for helpcontainer */
-/* .open {
-  display: block;
-} */

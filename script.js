@@ -27,7 +27,6 @@ const getCreatureStats = async () => {
     const creatureNameOrID = searchInput.value.toLowerCase();
     const res = await fetch(`https://rpg-creature-api.freecodecamp.rocks/api/creature/${creatureNameOrID}`);
     const data = await res.json();
-    console.log(data);
     updateUI(data);
   } catch {
     alert(`Creature not found, if you need help click the "?" button.`);
@@ -40,7 +39,7 @@ const getAllCreatures = async () => {
   try {
     const res = await fetch("https://rpg-creature-api.freecodecamp.rocks/api/creatures");
     const data = await res.json();
-    console.log(data);
+    return data;
   } catch {
     console.error(err);
   }
@@ -61,25 +60,40 @@ const updateUI = (data) => {
   spDefenseEl.textContent = data.stats[4].base_stat;
   speedEl.textContent = data.stats[5].base_stat;
   typesEl.innerHTML = data.types.map(type => `<p class="creature-type ${type.name}">${type.name.toUpperCase()}</p>`).join("");
+
+  searchInput.value = "";
+}
+
+const updateHelpContainer = (data) => {
+  helpContainerContent.innerHTML = data.map(item => 
+    `<p>${item.name} #${item.id}</p>`
+  ).join("");
 }
 
 const showHelpContainer = () => {
   helpContainer.classList.toggle("open");
   helpBtn.textContent = helpBtn.textContent === "?" ? "X" : "?";
-
-  // Fill help container with content!!
-
 }
 
+
 searchBtn.addEventListener("click", getCreatureStats);
-helpBtn.addEventListener("click", (e) => {
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    getCreatureStats();
+  }
+})
+helpBtn.addEventListener("click", async (e) => {
   e.stopPropagation();
+  const creatures = await getAllCreatures();
   showHelpContainer();
-});
+  updateHelpContainer(creatures);
+  }
+)
 
 window.addEventListener("click", (e) => {
   if (helpContainer.classList.contains("open") && !helpContainer.contains(e.target)) {
     helpContainer.classList.remove("open");
+    helpBtn.textContent = helpBtn.textContent === "?" ? "X" : "?";
   }
 })
 
