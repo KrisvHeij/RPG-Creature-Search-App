@@ -75,13 +75,15 @@ const showHelpContainer = () => {
   helpBtn.textContent = helpBtn.textContent === "?" ? "X" : "?";
 }
 
-
+//  Event Listeners
 searchBtn.addEventListener("click", getCreatureStats);
+
 searchInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     getCreatureStats();
   }
 })
+
 helpBtn.addEventListener("click", async (e) => {
   e.stopPropagation();
   const creatures = await getAllCreatures();
